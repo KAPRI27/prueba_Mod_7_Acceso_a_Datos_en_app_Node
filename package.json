@@ -1,0 +1,16 @@
+{
+  "name": "prueba_acceso_a_datos_en_app_node",
+  "version": "1.0.0",
+  "description": "conectar una bbdd con postgresql con node ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "pmaureira",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.7.1",
+    "nodemon": "^3.1.0",
+    "pg": "^8.11.5"
+  }
+}
