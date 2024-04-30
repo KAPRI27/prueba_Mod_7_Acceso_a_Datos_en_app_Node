@@ -9,8 +9,9 @@
   "author": "pmaureira",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.6.8",
+    "express": "^4.19.2",
     "jquery": "^3.7.1",
-    "nodemon": "^3.1.0",
     "pg": "^8.11.5"
   }
 }

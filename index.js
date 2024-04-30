@@ -1,9 +1,36 @@
+const express = require('express')
+const { Pool } = require('pg')
 
-const pg = require('pg')
-//const nodemon = require('nodemon')
+const pool = new Pool({connectionString:'pmaureira://pmaureira:M4ur3ir4!!Aa@localhost:5432/bancosolar'});
+// Importamos la librería de PostgreSQL
+//const { Client } = require("pg");
+// Función para conectarnos a la base de datos
+const connection = async () => {
+  // Creamos una instancia de la clase Client
+  const config = {
+    user: 'pmaureira',
+    host: 'localhost',
+    database: 'bancosolar',
+    password: 'M4ur3ir4!!Aa',
+    port: 5432,
+   }
+  // Nos conectamos a la base de datos
+  await pool.connect();
+
+  // Realizamos una consulta a la base de datos
+  const result = await pool.query("SELECT * FROM usuarios");
+  // Mostramos el resultado de la consulta
+  console.log(result.rows);
+  // Cerramos la conexión a la base de datos
+  await pool.end();
+};
+
+// Llamamos a la función connection
+connection();
 
 
-
+/*
+//Edita el usuario 
 const setInfoModal = (nombre, balance, id) => {
   $("#nombreEdit").val(nombre);
   $("#balanceEdit").val(balance);
@@ -135,3 +162,4 @@ const formatDate = (date) => {
 };
 formatDate();
 
+*/
